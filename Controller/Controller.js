@@ -29,7 +29,7 @@ export const uploadimage = async (req, res) => {
   
   export const getProduct = async (req, res) => {
     try {
-      const products = await product.find();
+      const products = await Product.find().maxTimeMS(30000); // Set timeout to 30 seconds
       res.status(200).json(products);
     } catch (error) {
       console.error("Error fetching products:", error);

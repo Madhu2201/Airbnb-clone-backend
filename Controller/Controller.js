@@ -33,7 +33,7 @@ export const uploadimage = async (req, res) => {
       res.status(200).json(products);
     } catch (error) {
       console.error("Error fetching products:", error);
-      res.status(500).json({ message: "Error fetching products" });
+      res.status(500).json({ message: "Error fetching products",error: error.message  });
     }
   };
   export const getproductbyindex = async (req, res) => {

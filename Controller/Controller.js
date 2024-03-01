@@ -29,7 +29,7 @@ export const uploadimage = async (req, res) => {
   
   export const getProduct = async (req, res) => {
     try {
-      const product2 = await product.find().maxTimeMS(30000); // Set timeout to 30 seconds
+      const product2 = await product.find().maxTimeMS(30000); 
       res.status(200).json(product2);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -49,7 +49,7 @@ export const uploadimage = async (req, res) => {
       res.status(200).json(product2);
     } catch (error) {
       console.error("Error fetching product by index:", error);
-      res.status(500).json({ message: "Error fetching product by index" });
+      res.status(500).json({ message: "Error fetching product by index",error: error.message });
     }
   };
   
